@@ -1,0 +1,38 @@
+<%- include("../partials/header") %>
+		
+
+<div class='container'>
+	<header class='jumbotron'>
+		<div class='container'>
+			<h1>Gym Buddy</h1>
+				<p>View Your Scheduled Workouts!</p>
+				<p>
+					<a class='btn btn-primary btn-lg'href='/workouts/new'>Add New Workout</a>
+				</p>
+		</div>
+	</header>
+	
+	<div class='row'>
+		
+	
+
+
+		<% workouts.forEach(function(workouts){ %>
+			<div class='col-md-3 col-sm-6'>
+				<div class='thumbnail'>
+					<img src='<%=workouts.image%>'>
+					<div class='caption'>
+						<h4><%=workouts.name%></h4>
+					</div>
+						<p>
+							<a href='/workouts/<%=workouts._id%>'class='btn btn-primary'>More Info</a>
+						</p>
+				</div>
+			</div>
+		
+		<%}); %>
+	</div>	
+</div>
+
+
+<%- include("../partials/footer") %>

@@ -1,0 +1,56 @@
+<%- include("../partials/header") %>
+
+<div class='container'>
+	<div class='row'>
+		<div class='col-md-3'>
+			<p class='lead'>Gym Buddy</p>
+				<div class='list-group'>
+					<form method='POST'action='/workouts/<%=workout._id%>'>
+						<button type='submit' class='btn btn-success' title='Sends Workout To User Email'>Send Workout</button>
+					
+					</form>
+					
+					
+				</div>
+		</div>
+		<div class='col-md-9'>
+			<div class='thumbnail'>
+				<img class='img-responsive'src=' <%=workout.image%>'>
+				<div class='caption-full'>
+					<h4><strong><a><%=workout.name%></a></strong></h4>
+					<p><%=workout.description%></p>
+					<p><em>Submitted By:</em> <%=workout.user.username%></p>
+					<% if(currentUser && workout.user.id.equals(currentUser._id)){ %>
+					<a class = 'btn btn-warning'href='/workouts/<%=workout._id%>/edit'>Edit</a>
+					<form id='delete-form'action='/workouts/<%=workout._id%>?_method=DELETE' method='POST'>
+						<button class='btn btn-danger'>Delete</button>
+					</form>
+					<% } %>
+				</div>
+			</div>
+			<div class='well'>
+				<div class='text-right'>
+					<a class='btn btn-success'href='/workouts/<%=workout._id%>/comments/new'>Add New Exercise</a>
+				</div>
+						<% workout.comments.forEach(function(comment){ %>
+							<div class='row'>
+								<div class='col-md-12'>
+									<p><strong><%=comment.text%></strong></p>
+									<a class='btn btn-xs btn-warning'  href='/workouts/<%=workout._id%>/comments/<%=comment._id%>/edit'>Edit</a>
+								<form action='/workouts/<%=workout._id%>/comments/<%=comment._id%>?_method=DELETE' method='POST' class='delete-form'>
+									<input type='submit' class='btn btn-xs btn-danger 'value='Delete'>
+										
+								</form>	
+								</div>
+							</div>	
+						<%})%>
+			</div>
+		</div>
+	</div>
+</div>
+				
+
+
+				
+	
+<%- include("../partials/footer") %>

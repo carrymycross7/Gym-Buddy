@@ -1,0 +1,19 @@
+<%- include("../partials/header") %>
+		
+<div class='container'>
+	<div class='row'>
+		<h1>Add Another Exercise to <%=workout.name%></h1>
+
+		<form action='/workouts/<%=workout._id%>/comments' method='POST'>
+			<div class='form-group'>
+				<input class='form-control'type='text'name='comment[text]'placeholder='exercise'>
+			</div>
+			<div class='form-group'>
+				<button class='btn btn-lg btn-default'>Add Exercise</button>
+			</div>
+		</form>
+
+		<a href='/workouts'>Back To Workouts</a>
+	</div>	
+</div>
+<%- include("../partials/footer") %>

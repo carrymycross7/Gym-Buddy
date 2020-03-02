@@ -1,0 +1,25 @@
+<%- include("../partials/header") %>
+		
+<div class='container'>
+	<div class='row'>
+		<h1>Add a New Workout</h1>
+
+		<form action='/workouts' method='POST'>
+			<div class='form-group'>
+				<input class='form-control'type='text' name='name'placeholder='workout'>
+			</div>
+			<div class='form-group'>
+				<input class='form-control'type='text' name='image'placeholder='image url'>
+			</div>
+			<div class='form-group'>
+				<input class='form-control'type='text' name='description'placeholder='description'>
+			</div>
+			<div class='form-group'>
+				<button class='btn btn-lg btn-default'>Add Workout</button>
+			</div>
+		</form>
+
+		<a href='/workouts'>Back To Workouts</a>
+	</div>	
+</div>
+<%- include("../partials/footer") %>

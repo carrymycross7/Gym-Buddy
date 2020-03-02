@@ -1,0 +1,49 @@
+.thumbnail img {
+	width:100%;
+}
+
+.thumbnail {
+	padding:0;
+}
+
+.thumbnail .caption-full {
+	padding: 9px;
+}
+
+#delete-form{
+	display: inline;
+}
+
+.delete-form{
+	display: inline;
+}
+
+
+
+.jumbotron {
+ 
+  padding: 2rem 1rem;
+ 
+  margin-bottom: 2rem;
+ 
+  border-radius: 0.3rem;
+ 
+ 
+ 
+background: #000064;  /* old browsers fallback color*/
+ 
+background: -webkit-linear-gradient(to right, #1BADD8, #00003E); 
+ 
+background: linear-gradient(to right, #1BADD8, #00003E);
+ 
+ 
+ 
+ 
+ 
+}
+ 
+.hd1{
+ 
+    color:#fff;
+ 
+}
